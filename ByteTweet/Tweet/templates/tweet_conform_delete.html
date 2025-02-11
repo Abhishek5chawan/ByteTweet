@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    ByteTweet
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-4">welcome to ByteTweet</h1>
+    <h3 class="mt-4">Are you sure you want to delete this tweet?</h3>
+
+    <form method='post'>
+        {% csrf_token %}
+        <button class="btn btn-danger">Delete</button>
+        <a class="btn btn-success" href="{% url 'tweet_list' %}">cancel</a>
+    </form>
+{% endblock %}
